@@ -4,6 +4,12 @@
 
 > 数据为实训环境中构造的模拟数据，不包含真实客户信息。
 
+## 效果展示
+
+| 客户标签占比 | 营业部交易量占比 |
+| --- | --- |
+| ![客户标签占比](docs/screenshots/客户标签占比.png) | ![营业部交易量占比](docs/screenshots/营业部交易量占比.png) |
+
 ## 一、整体架构
 
 ```
@@ -114,11 +120,12 @@
 │       ├── bash/                    # Hive 执行
 │       ├── sparkbash/               # Spark 执行 + 导出 MySQL
 │       └── py/                      # PySpark JDBC 导出脚本
-└── 辉煌证券指标中心/             # 桌面展示程序
-    ├── *.jar                    # 5 个可执行 Swing 程序
-    ├── config/data_sources.json # 展示数据源配置
-    ├── data/*.json              # 演示用图表数据
-    └── jdbc.properties.example  # 数据库连接配置模板
+├── 辉煌证券指标中心/             # 桌面展示程序
+│   ├── *.jar                    # 5 个可执行 Swing 程序
+│   ├── config/data_sources.json # 展示数据源配置
+│   ├── data/*.json              # 演示用图表数据
+│   └── jdbc.properties.example  # 数据库连接配置模板
+└── docs/screenshots/            # 运行效果截图
 ```
 
 ## 四、运行方式
@@ -178,8 +185,10 @@ cd project/ads/sparkbash && ./ads_business_tran_total.sh
 ```bash
 cd 辉煌证券指标中心
 cp jdbc.properties.example jdbc.properties   # 填入本机 MySQL 密码
-java -jar 辉煌证券标签客户占比.jar
+java -Dfile.encoding=UTF-8 -jar 辉煌证券标签客户占比.jar
 ```
+
+> Windows 中文环境默认使用 GBK，不加 `-Dfile.encoding=UTF-8` 时程序内的中文标签会显示为乱码。
 
 5 个程序分别对应：
 
