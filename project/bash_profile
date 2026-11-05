@@ -1,0 +1,4 @@
+db=gcproject
+trade_date=$(date -d "yesterday" +%Y%m%d)
+first_day=$(date -d "yesterday" +%Y%m)01
+

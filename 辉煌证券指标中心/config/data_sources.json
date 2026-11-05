@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "name": "股票",
+      "path": "data/sales_data.json"
+    },
+    {
+      "name": "ETF",
+      "path": "data/product_data.json"
+    }
+  ]
+}

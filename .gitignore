@@ -1,0 +1,18 @@
+# 数据库连接配置（含密码，不入库）
+jdbc.properties
+
+# 日志与临时文件
+*.log
+derby.log
+~$*
+*.tmp
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# 系统文件
+.DS_Store
+Thumbs.db
